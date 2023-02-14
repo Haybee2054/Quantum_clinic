@@ -58,11 +58,24 @@ body {
   line-height: 20px;
   font-weight: 400;
 }
- .hero-cta {
+.hero-cta {
   color: #ffffff;
   background: #354653;
   border-radius: 6px;
   padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+#hero-cta {
+  color: #ffffff;
+  background: #354653;
+  border-radius: 6px;
+  padding: 10px 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -91,7 +104,6 @@ body {
   border: none;
 }
 .discount-form .limited-cta {
-  
   background: #ffffff;
   border: 1px solid #01465e;
   border-radius: 6px;
@@ -122,7 +134,7 @@ body {
   flex-wrap: wrap;
 }
 .date-section .end-date {
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 .date-section input {
   width: 302px;
@@ -134,122 +146,129 @@ body {
   padding: 5px;
   color: #353f50;
 }
-.custom-control{
-    margin: 0 0px;
-    padding-top: 10px;
-
+.custom-control {
+  margin: 0 0px;
+  padding-top: 10px;
 }
 .fa {
   margin: 7px 0px;
   cursor: pointer;
-  
 }
 .discount-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.discount-section .discount-applied {
+  margin-left: 20px;
+}
+.discount-section select,
+input {
+  width: 302px;
+  height: 48px;
+  background: #f3f5f6;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 15px;
+  color: #353f50;
+}
+.item-discounted {
+  margin: 0 0 15px;
+}
+.item-discounted select {
+  width: 302px;
+  height: 48px;
+  background: #f3f5f6;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 15px;
+  color: #353f50;
+}
+.item-discounted a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+.discount-cta {
+  color: #ffffff;
+  background: #354653;
+  border-radius: 6px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  width: 160px;
+  height: 43px;
+  align-items: center;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+.cancel-cta {
+  background: #eaecef;
+  border-radius: 6px;
+  color: #1f2126;
+  width: 161px;
+  height: 43px;
+  outline: none;
+  border: none;
+  align-items: center;
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+}
+.search-button {
+  display: flex;
+  justify-content: space-between;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
+}
+@media (max-width: 768px) {
+  .discount-form h6 {
+    font-size: 13px;
+    color: #5f738c;
+    font-style: normal;
+  }
+  .discount-form .code-input {
+    width: 300px;
+  }
+  .date-section {
     display: flex;
-    flex-wrap: wrap;
-    
+  }
+  .date-section .end-date {
+    margin-left: 0;
+  }
+  .custom-control {
+    margin: 0 0px;
+    padding-top: 10px;
+  }
+  .discount-section {
+    display: flex;
   }
   .discount-section .discount-applied {
-    margin-left: 20px;
+    margin-left: 0;
   }
-  .discount-section select, input {
-    width: 302px;
-    height: 48px;
-    background: #f3f5f6;
-    border-radius: 6px;
-    outline: none;
-    border: none;
-    padding: 15px;
-    color: #353f50;
-    
+  .item-discounted a {
+    font-size: 14px;
   }
-  .item-discounted{
-    margin: 0 0 15px;
-  }
-  .item-discounted select {
-    width: 302px;
-    height: 48px;
-    background: #f3f5f6;
-    border-radius: 6px;
-    outline: none;
-    border: none;
-    padding: 15px;
-    color: #353f50;
-  }
-  .item-discounted a{
-    margin-left: 20px;
-    text-decoration: none;
-  }
-  .discount-cta {
+  #hero-cta {
     color: #ffffff;
     background: #354653;
     border-radius: 6px;
-    padding: 12px 24px;
-    display: flex;
-    flex-direction: row;
-    width:160px;
-    height: 43px;;
-    align-items: center;
-    border: none;
-    outline: none;
-    text-decoration: none;
 
-    
-  }
-  .cancel-cta{
-    background: #EAECEF;
-    border-radius: 6px;
-    color: #1F2126;
-    width: 161px;
-    height: 43px;
-    outline: none;
-    border: none;
-    align-items: center;
-    margin-left: 20px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px; 
-  }
-  .search-button{
     display: flex;
-    justify-content: space-between;
-  }
-  a:hover, a:active {
-    text-decoration: none;
-    color: white;
- }
- @media (max-width: 768px) {
-   
-      .discount-form h6 {
-        font-size: 13px;
-        color: #5f738c;
-        font-style: normal;
-      }
-      .discount-form .code-input {
-        width: 300px;
-        
-      }
-      .date-section {
-        display: flex;
-        
-      }
-      .date-section .end-date {
-        margin-left: 0;
-      }
-      .custom-control{
-        margin: 0 0px;
-        padding-top: 10px;
+    padding-right: 30px;
+    font-size: 10px;
+    width: 300px;
+    flex-direction: row;
     
-    }
-    .discount-section {
-        display: flex;
-        
-        
-      }
-      .discount-section .discount-applied {
-       margin-left: 0;
-      }
-      .item-discounted a{
-       font-size: 14px;
-      }
- }
+    align-items: center;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+  }
+}
