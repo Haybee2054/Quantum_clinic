@@ -119,12 +119,10 @@ body {
 }
 .date-section {
   display: flex;
-
-  /* justify-content: space-around; */
   flex-wrap: wrap;
 }
 .date-section .end-date {
-  margin-left: 20px;
+  margin-left: 20px; 
 }
 .date-section input {
   width: 302px;
@@ -137,10 +135,9 @@ body {
   color: #353f50;
 }
 .custom-control{
-    margin: 10px 10px;
-    
-   
-    
+    margin: 0 0px;
+    padding-top: 10px;
+
 }
 .fa {
   margin: 7px 0px;
@@ -150,7 +147,7 @@ body {
 .discount-section {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 10px;
+    
   }
   .discount-section .discount-applied {
     margin-left: 20px;
@@ -167,7 +164,7 @@ body {
     
   }
   .item-discounted{
-    margin: 30px 10px;
+    margin: 0 0 15px;
   }
   .item-discounted select {
     width: 302px;
@@ -220,4 +217,39 @@ body {
   a:hover, a:active {
     text-decoration: none;
     color: white;
+ }
+ @media (max-width: 768px) {
+   
+      .discount-form h6 {
+        font-size: 13px;
+        color: #5f738c;
+        font-style: normal;
+      }
+      .discount-form .code-input {
+        width: 300px;
+        
+      }
+      .date-section {
+        display: flex;
+        
+      }
+      .date-section .end-date {
+        margin-left: 0;
+      }
+      .custom-control{
+        margin: 0 0px;
+        padding-top: 10px;
+    
+    }
+    .discount-section {
+        display: flex;
+        
+        
+      }
+      .discount-section .discount-applied {
+       margin-left: 0;
+      }
+      .item-discounted a{
+       font-size: 14px;
+      }
  }
