@@ -53,12 +53,21 @@
           class="code-input"
         /><br /><br />
         <h6>Total Number of Discount Available</h6>
-
-        <button class="limited-cta">Limited</button>
-        <button class="unlimited-cta">Unlimited</button><br /><br />
+        <div class="anchor-button">
+          <button id="limited-cta" class="limited-cta">Limited</button>
+          <button id="unlimited-cta" class="disabled-btn">Unlimited</button>
+        </div>
 
         <h6>An unlimited number of customers can use this discount code</h6>
         <br />
+        <div id="discountTimes" class="hide">
+          <h6>How many times can discount Code be used</h6>
+          <input
+            type="code"
+            placeholder="e.g DHJ290283"
+            class="code-input"
+          /><br /><br />
+        </div>
         <section class="date-section">
           <div>
             <h6>Start Date</h6>
@@ -70,7 +79,7 @@
           </div>
           <!-- Default switch -->
         </section>
-        <div class="custom-control custom-switch">
+        <div class="custom-control custom-switch" id="checkValue">
           <input
             type="checkbox"
             class="custom-control-input"
@@ -81,13 +90,19 @@
           >
           <i class="fa fa-info-circle"></i>
         </div>
-        <div style="display:flex; align-items:center; margin-left:10px;  border-bottom: 2px solid #9ca3af;
-        padding-bottom: 20px;">
-
-            <h6>Use Per Customer</h6>
-            <i class="fa fa-circle-minus" style="padding-left:10px; margin-bottom:9px;"></i>
-            <p style="margin-bottom:9px;padding-left:15px;padding-top:5px;">0</p>
-            <i class="fa fa-circle-plus" style="margin-bottom:9px;padding-left:20px;"></i>
+        <div id="counter" class="counter-container hide">
+          <h6>Use Per Customer</h6>
+          <i
+            class="fa fa-circle-minus"
+            style="padding-left: 10px; margin-bottom: 9px"
+          ></i>
+          <p style="margin-bottom: 9px; padding-left: 15px; padding-top: 5px">
+            0
+          </p>
+          <i
+            class="fa fa-circle-plus"
+            style="margin-bottom: 9px; padding-left: 20px"
+          ></i>
         </div>
 
         <section class="discount-section">
@@ -117,11 +132,71 @@
             <option value="limited">limited</option>
             <option value="limited">limited</option>
           </select>
-          <a href="#">+ Choose items</a>
+          <a href="chooseitemtable.html">+ Choose items</a>
         </div>
-        <button class="discount-cta">Save Discount</button>
-        <button class="cancel-cta">Cancel</button>
+        <div>
+          <div style="display: flex">
+            <a href="discount-table.html" class="discount-cta">Save Discount</a>
+
+            <button class="cancel-cta">Cancel</button>
+          </div>
+        </div>
       </div>
     </form>
+
+    <script>
+      let limitedBtn = document.getElementById("limited-cta");
+      let unlimitedBtn = document.getElementById("unlimited-cta");
+      let discountTimes = document.getElementById("discountTimes");
+
+      let customSwitch = document.getElementById("customSwitches");
+      let checkValue = document.getElementById("checkValue");
+      let counter = document.getElementById("counter");
+
+      /*
+      |--------------------------------------------------------------------------
+      | Listener for limited button clicks
+      |--------------------------------------------------------------------------
+      */
+      limitedBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("CLICKED");
+        discountTimes.style.display = "block";
+        limitedBtn.classList.remove("disabled-btn");
+        limitedBtn.classList.add("limited-cta");
+        unlimitedBtn.classList.remove("limited-cta");
+        unlimitedBtn.classList.add("disabled-btn");
+      });
+
+      /*
+      |--------------------------------------------------------------------------
+      | Listener for unlimited button clicks
+      |--------------------------------------------------------------------------
+      */
+      unlimitedBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("CLICKED");
+        discountTimes.style.display = "none";
+        unlimitedBtn.classList.remove("disabled-btn");
+        unlimitedBtn.classList.add("limited-cta");
+        limitedBtn.classList.remove("limited-cta");
+        limitedBtn.classList.add("disabled-btn");
+      });
+      /*
+      |--------------------------------------------------------------------------
+      | Listener for Checkbox
+      |--------------------------------------------------------------------------
+      */
+      customSwitch.addEventListener("change", function (e) {
+        e.preventDefault();
+        if (customSwitch.checked) {
+          console.log("Checked");
+          counter.style.display = "flex";
+        } else if (customSwitch.checked === false) {
+          console.log("Unchecked");
+          counter.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>

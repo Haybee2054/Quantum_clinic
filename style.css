@@ -41,6 +41,7 @@ body {
   font-size: 12px;
   background: rgba(30, 30, 30, 0.02);
 }
+
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@ body {
   color: #ffffff;
   background: #354653;
   border-radius: 6px;
-  padding: 10px 10px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -103,32 +104,52 @@ body {
   outline: none;
   border: none;
 }
-.discount-form .limited-cta {
-  background: #ffffff;
-  border: 1px solid #01465e;
-  border-radius: 6px;
-  width: 101px;
-  height: 48px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  color: #4e5a6c;
-  text-align: center;
-}
-.discount-form .unlimited-cta {
-  background: #f3f5f6;
-  border: 1px solid #f3f5f6;
-  border-radius: 6px;
-  width: 101px;
-  height: 48px;
+.discount-form .anchor-button .limited-cta {
   color: #01465e;
   text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin-left: 15px;
+  background: #f3f5f6;
+  border: 1px solid #01465e;
+  border-radius: 6px;
+  padding: 10px 10px;
+  flex-direction: row;
+  width: 101px;
+  height: 48px;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 700;
+  outline: none;
+  text-decoration: none;
 }
+
+.disabled-btn {
+  color: #01465e;
+  text-align: center;
+  background: #f3f5f6;
+  border-radius: 6px;
+  border: none;
+  padding: 10px 10px;
+  flex-direction: row;
+  width: 101px;
+  height: 48px;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 400;
+  outline: none;
+  text-decoration: none;
+}
+
+.anchor-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0px;
+}
+
+.anchor-button :last-child {
+  margin-left: 10px;
+}
+
 .date-section {
   display: flex;
   flex-wrap: wrap;
@@ -136,8 +157,9 @@ body {
 .date-section .end-date {
   margin-left: 20px;
 }
+
 .date-section input {
-  width: 302px;
+  width: 301px;
   height: 48px;
   background: #f3f5f6;
   border-radius: 6px;
@@ -157,6 +179,8 @@ body {
 .discount-section {
   display: flex;
   flex-wrap: wrap;
+  border-top: 2px solid rgb(156, 163, 175);
+  padding-top: 10px;
 }
 .discount-section .discount-applied {
   margin-left: 20px;
@@ -232,12 +256,17 @@ a:active {
     color: #5f738c;
     font-style: normal;
   }
+
+  .search-button {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .discount-form .code-input {
     width: 300px;
   }
-  .date-section {
-    display: flex;
-  }
+
   .date-section .end-date {
     margin-left: 0;
   }
@@ -258,17 +287,31 @@ a:active {
     color: #ffffff;
     background: #354653;
     border-radius: 6px;
-
     display: flex;
-    padding-right: 30px;
-    font-size: 10px;
-    width: 300px;
+    font-size: 16px;
     flex-direction: row;
-    
+    margin-top: 10px;
     align-items: center;
     border: none;
     outline: none;
+    padding: 10px;;
     text-decoration: none;
     text-align: center;
   }
 }
+
+.show-unlimited-sections {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.counter-container {
+  display: none;
+  align-items: center;
+  margin-left: 10px;
+  padding-bottom: 20px;
+}
+
